@@ -1,0 +1,227 @@
+<div class="analyticss">
+    <div class="analytics-dashboard">
+        <div class="plane-box">
+            <font-awesome-icon class="plane-icon" icon="plane"></font-awesome-icon>
+        </div>
+        <div class="star2">
+            <div style="display: inline-block; background-color:#000; color:#fff;padding:6px; border-radius: 6px;">
+                    <font-awesome-icon  icon="star"></font-awesome-icon>
+            </div>
+                <font-awesome-icon icon="plus" class="plus"></font-awesome-icon>
+                <button class="btn-createnew">Create new</button>
+        </div>
+        <div class="some-text" style="display: inline-block; margin-left: 50px;">
+            <p class="text1">Analytics Dashboard</p>
+            <p class="text2">This is an example dashboard created usind build-in elements and components.</p>
+        </div>
+        
+    </div>
+
+    <div class="portfolio-analytics">
+            <div class="portfolio-1">
+                <p id="portfolio-text">Portfolio Performanse</p>
+                <button class="btn-view-all">View All</button>
+            </div>
+            <div class="portfolio-2">
+                <div id="first">
+                    <div class="desktop-image">
+                        <font-awesome-icon class="desktop-icon" icon="desktop"></font-awesome-icon>
+                    </div>
+                    <ul>
+                        <li class="li-cash-deposits">Cash Deposits</li>
+                        <li class="li-number">1,7M</li>
+                        <li><font-awesome-icon class="angle-down-icon" icon="angle-down"></font-awesome-icon><span class="angle-down-icon">54.1%</span> less earning</li>
+                    </ul>
+                </div>
+                <div id="second">
+                    <div class="graduating-image">
+                        <font-awesome-icon class="graduating-cap-icon" icon="graduation-cap"></font-awesome-icon>
+                    </div>
+                    <ul>
+                        <li>Invested Dividents</li>
+                        <li class="li-number">9M</li>
+                        <li>Grow Rate: <font-awesome-icon class="angle-down-icon1" icon="angle-down"></font-awesome-icon> <span class="angle-down-icon1">14.1%</span></li>
+                    </ul>
+                </div>
+                <div id="third">
+                    <div class="building-image">
+                        <font-awesome-icon class="buidling-icon" icon="building"></font-awesome-icon>
+                    </div>
+                    <ul>
+                        <li>Capital Gains</li>
+                        <li class="li-number">$563</li>
+                        <li>Increased by <font-awesome-icon class="angle-up" icon="angle-up"></font-awesome-icon><span class="angle-up">7.35%</span></li>
+                    </ul>
+                </div>
+                </div>
+            <div class="portfolio-3">
+                <p id="view-complete-report">View Complete Report</p>
+            </div>
+        </div>
+        <!-- TECHNICAL SUPPORT COMPONENT -->
+
+        <b-container class="bv-example-row" style="margin-left: 0; margin-right: 0;" fluid>
+                <b-row>
+                  <b-col cols="12" md="12" lg="6" xl="6" sm="12">
+                        <div class="techical-support" >
+                                <div class="technical support-header">
+                                    <font-awesome-icon class="cloud-donwload-icon" icon="cloud-download-alt"></font-awesome-icon>
+                                    <p class="technical-support-text">Techical Support</p>
+                                    <font-awesome-icon class="bars-icon" icon="bars"></font-awesome-icon>                
+                                </div>
+                                <div class="techical support-middle">
+                                    <div class="previous-button" id="prev-button" @click="prev" >
+                                        <font-awesome-icon class="left-angle" icon="angle-left"></font-awesome-icon>
+                                    </div>                   
+                                          <b-carousel
+                                                    ref="myCarousel"
+                                                    id="carousel-1"
+                                                    v-model="slide"
+                                                    :interval="0"
+                                                    
+                                                    indicators
+                                                    background="#fffc"
+                                                    img-width="1024"
+                                                    img-height="auto"
+                                                    style="text-shadow: 1px 1px 2px #333;"
+                                                    @sliding-start="onSlideStart"
+                                                    @sliding-end="onSlideEnd"
+                                                    >
+                        
+                        
+                                                    
+                                                    <b-carousel-slide  caption="Help Desk Tickets" img-blank img-alt="Blank image" id="1" label-goto-slide="0">
+                                                        <line-chart :chart-data="datacollection" class="chartjs-render-monitor"></line-chart>  
+                                                       
+                                                    </b-carousel-slide>
+                        
+                        
+                                                    <b-carousel-slide caption="New Accounts Since 2019" img-blank img-alt="Blank image" id="2" label-goto-slide="1">
+                                                        <new-accounts :chart-data="datacollection" class="chartjs-render-monitor"></new-accounts>
+                                                    </b-carousel-slide>
+                                            
+                                            
+                                                    
+                                                    <b-carousel-slide caption="Last Year Total Sales" img-blank img-alt="Blank image" id="3" label-goto-slide="2">
+                                                        <last-year :chart-data="datacollection" class="chartjs-render-monitor"></last-year>
+                                                    </b-carousel-slide>                  
+                                          </b-carousel>
+                                    <div class="next-button" id="next-button" @click="next">
+                                            <font-awesome-icon class="right-angle" icon="angle-right"></font-awesome-icon>                    
+                                    </div>
+                                    <div class="dots">
+                                        <div class="dot1" @click="firstGraph"></div>
+                                        <div class="dot2" @click="secondGraph"></div>
+                                        <div class="dot3" @click="thirdGraph"></div>
+                                    </div>
+                                    <p class="sales-text">Sales progress</p>             
+                                </div>
+                                <div class="technical support-footer">
+                                    <div class="progress-bar-header">
+                                        <p class="total-orders-text">Total Orders</p>
+                                        <p class="last-year-text">Last year expenses</p>
+                                        <h2 class="number-success">$ 1896</h2>
+                                    </div>
+                                    <div class="progress-bar-middle">                    
+                                        <b-progress :value="30" :max="100" class="mb-3-progress" striped :animated="animate"></b-progress>
+                                    </div>
+                                    <div class="progress-bar-footer">
+                                        <p>YoY Growth</p>
+                                    </div>
+                                </div>
+                            </div>
+                  </b-col>
+                  <b-col cols="12" md="12" lg="6" xl="6" sm="12">
+                        <div class="timeline-example">
+                                <div class="timeline example-header">
+                                    <font-awesome-icon class="spray-can-icon" icon="spray-can"></font-awesome-icon>
+                                    <p class="technical-support-text">Timeline Example</p>
+                                    <font-awesome-icon class="bars-icon-r" icon="bars"></font-awesome-icon>
+                                </div>
+                                <div class="timeline example-middle">
+                                    <div class="column-dots">
+                                        <span class="circle"></span>
+                                        <p id="all-hands">All Hands Meeting</p>
+                                        <span class="circle1"></span>
+                                        <p id="yet-another">Yet another one, at <span id="yet-another-time">15:00 PM</span></p>
+                                        <span class="circle2"></span>
+                                        <p id="build-production">Build the Production release</p>
+                                        <div class="parent button-new">
+                                            <b-col lg="4" class="pb-2"><b-button size="sm" style="background-color: #D92550;">New</b-button></b-col>
+                                        </div>
+                                        <span class="circle3"></span>
+                                        <p id="not-important">Something not important</p>
+                                        <div class="avatar-wraper mt-2">
+                                            <div class="avatar-icon-wraper-sm">
+                                                <div class="avatar-icon">
+                                                    <img src="../../assets/profilephoto.jpg" alt="pavle-photo" class="p-photos">
+                                                </div>
+                                            </div>
+                                            <div class="avatar-icon-wraper-sm1">
+                                                    <div class="avatar-icon1">
+                                                        <img src="../../assets/Vaske.jpg" alt="vaske-photo" class="p-photos1">
+                                                    </div>
+                                            </div>
+                                            <div class="avatar-icon-wraper-sm1">
+                                                    <div class="avatar-icon1">
+                                                        <img src="../../assets/martin.jpg" alt="martin-photo" class="p-photos1">
+                                                    </div>
+                                            </div>
+                                            <div class="avatar-icon-wraper-sm1">
+                                                <div class="avatar-icon1">
+                                                    <img src="../../assets/rastko.jpg" alt="rastko-photo" class="p-photos1">
+                                                </div>
+                                        </div>
+                                        <div class="avatar-icon-wraper-sm1">
+                                            <div class="avatar-icon1">
+                                                <img src="../../assets/coske.jpg" alt="coske-photo" class="p-photos1">
+                                            </div>
+                                        </div>
+                                        <div class="avatar-icon-wraper-sm1">
+                                            <div class="avatar-icon1">
+                                                <img src="../../assets/svaki.jpg" alt="svaki-photo" class="p-photos1">
+                                            </div>
+                                        </div>
+                                        <div class="avatar-icon-wraper-sm1">
+                                            <div class="avatar-icon1">
+                                                <img src="../../assets/goksi.jpg" alt="martin-photo" class="p-photos1">
+                                            </div>
+                                        </div>
+                                        <div class="avatar-icon-wraper-sm1">
+                                            <div class="avatar-icon1">
+                                                <img src="../../assets/coutinho.jpg" alt="coutinho-photo" class="p-photos1">
+                                            </div>
+                                        </div>
+                                        <div class="avatar-icon-wraper-sm-add">
+                                            <div class="avatar-icon-add">
+                                                <img src="../../assets/plus.png" alt="plus-photo" class="p-photos-add">
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div id="second-another">
+                                            <span class="circle1-1"></span>
+                                            <p id="yet-another">Yet another one, at <span id="yet-another-time">15:00 PM</span></p>
+                                            <span class="circle2-1"></span>
+                                            <p id="build-production">Build the Production release</p>
+                                            <div class="parent button-new">
+                                                <b-col lg="4" class="pb-2"><b-button size="sm" style="background-color: #D92550;">New</b-button></b-col>
+                                            </div>
+                                            <span class="circle3-1"></span>
+                                            <p id="not-important">Something not important</p>
+                                            <span class="circle4-1"></span>
+                                            <p id="this-dot">This dot has a dark state</p>
+                                            <span class="circle5-1"></span>
+                                            <p id="all-hands1">All Hands Meetings</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline example-footer">
+                                        <b-button pill class="view-all-messages">View all massages</b-button>
+                                </div>
+                        </div>
+                  </b-col>        
+                </b-row>
+        </b-container>
+
+
+</div>

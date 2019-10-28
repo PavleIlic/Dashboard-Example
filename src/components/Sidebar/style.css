@@ -1,0 +1,189 @@
+/*Button, h3*/
+button, h3 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 0;
+    
+}
+
+/*Naslov-sidebar*/
+.naslov-sidebar {
+    background-color:wheat;
+    padding: 5px;
+}
+
+
+/*Side bar*/
+.side-bar{
+    width: 280px;
+    height: 1700px;
+    float: left;
+}
+
+/*Open-close*/
+.open-close {
+    float: right;
+    margin-right: 5px;
+    font-size: 24px;
+    margin-top: 15px;
+    color: #3f6ad8;
+}
+
+/*Main-nav*/
+.main-nav {
+    padding-left: 5px;
+    padding-top: 5px;
+    color: blue;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/*rocket-dashboard*/
+.rocket-dashboard {
+    display: block;
+    cursor: pointer;
+    color: #3f6ad8;
+    padding-top: 8px;
+    height: 40px;
+}
+
+/* rocket */
+.rocket {
+    margin-left: 25px;
+}
+
+/* dashboard */
+.dashboard {
+    display: inline-block;
+    padding-left: 7px;
+    color: black;
+}
+
+.dashboard:hover {
+    color: blue;
+}
+
+/* dashboard-active */
+.dashboard_active {
+    display: inline-block;
+    padding-left: 7px;
+    color: #3f6ad8;
+    font-weight: bold;
+}
+
+
+/* rocket-dashboard:hover */
+.rocket-dashboard:hover{
+    border-radius: 5px;
+    color: #3f6ad8;
+    background-color: #e0f3ff;
+}
+/* ul */
+ul {
+    list-style-type: none;
+    padding:5px;
+    border-left: 4px solid #e0f3ff;
+    margin-left: 34px;
+}
+/*li*/
+li {
+    padding: 5px;
+    border-radius: 5px;
+    height: 30; 
+    width: 90%;
+    margin-left: 5px;
+    padding-left: 15px;
+}
+/* li:hover */
+li:hover {
+    color: #3f6ad8;
+    background-color: #e0f3ff;
+    font-weight: bold;
+}
+
+/* angle-down */
+.angle-down {
+    margin-right: 20px;
+    float: right;
+    height: 20px;
+    top: 89px;
+}
+
+/* architect */
+.architect {
+    margin-left: 10px;
+}
+
+.dropdown-list {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.rocket1{
+    position: relative;
+    display: none;
+    font-size: 24px;
+}
+
+
+.a-photo{
+    display: none;
+}
+
+@media only screen and (max-width: 1200px){
+    .side-bar{
+        width: 80px;
+        transition: .1s ease-in-out;    
+    }
+    .open-close{
+        display: none;
+    }
+    .side-bar:hover{
+        width: 230px;
+    }
+
+
+    .side-bar:hover > .rocket1{
+        display: none;
+    }
+
+    .side-bar:hover > .main-navigation{
+        visibility: visible;
+        transition-delay: 200ms;
+    }
+    
+    .side-bar:hover > .a-photo{
+        display: none;
+    }
+
+    .side-bar:hover > .architect{
+        visibility: visible;
+        display: block;
+    }
+    .architect{
+        display: none;
+    }
+    .a-photo{
+        position: relative;
+        display: block;
+        margin-left: 25px;
+    }
+
+    .a-photo:hover > .architect{
+        visibility: visible;       
+    }
+
+   .main-navigation{
+        visibility: hidden;
+    }
+    .rocket1{
+        position: relative;
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #3f6ad8;
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+}

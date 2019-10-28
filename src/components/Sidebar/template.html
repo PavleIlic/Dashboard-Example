@@ -1,0 +1,27 @@
+<div class="side-bar">
+    <h3 class="architect">Architect</h3>
+    <img src="../../assets/A-img.jpg" alt="a-img" class="a-photo">
+    <font-awesome-icon icon="space-shuttle" class="rocket1 fa-rotate-270"></font-awesome-icon>
+    <font-awesome-icon icon="bars" class="open-close" @click="toggleSidebar" ></font-awesome-icon>
+<div class="main-navigation" v-if="toggle">
+    <p class="main-nav" >MAIN NAVIGATION</p>
+    <div class="rocket-dashboard" @click="toggleDashboard">
+        <font-awesome-icon icon="space-shuttle" class="rocket fa-rotate-270"></font-awesome-icon>
+        <p :class="active">Dashboard</p>
+        <font-awesome-icon icon="angle-down" class="angle-down"></font-awesome-icon>
+    </div>
+        <div class="dropdown-list" v-if="tgDashboard">
+            <ul>
+                <li>Analytics</li>
+                <li>Advertisement</li>
+                <li>Management</li>
+                <li>Helpdesk</li>
+                <li>Monitoring</li>
+                <li>Crypto</li>
+                <li>Project Management</li>
+                <li>Product</li>
+                <li>Statistics</li>
+            </ul>
+        </div>
+</div>
+</div>
